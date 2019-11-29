@@ -25,6 +25,12 @@ namespace ais_base {
         STATUS_NOT_DEFINED = 15
     };
 
+    enum ManeuverIndicator {
+        MANEUVER_NOT_AVAILABLE = 0,
+        MANEUVER_NORMAL = 1,
+        MANEUVER_SPECIAL = 2
+    };
+
     /** Representation of the data stored in AIS Message 1 to 3 */
     struct Position {
         base::Time time;
@@ -56,6 +62,11 @@ namespace ais_base {
         float yaw_velocity = base::unknown<float>();
         /** Speed over ground, in m/s */
         float speed_over_ground = base::unknown<float>();
+
+        ManeuverIndicator maneuver_indicator = MANEUVER_NOT_AVAILABLE;
+
+        bool raim = false;
+        uint32_t radio_status = 0;
     };
 
 }
