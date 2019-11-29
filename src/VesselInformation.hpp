@@ -96,7 +96,10 @@ namespace ais_base {
         float length = base::unknown<float>();
         float width = base::unknown<float>();
 
-        base::Vector3d reference_position;
+        base::Vector3d reference_position =
+            base::Vector3d(base::unknown<float>(),
+                           base::unknown<float>(),
+                           base::unknown<float>());
     };
 }
 

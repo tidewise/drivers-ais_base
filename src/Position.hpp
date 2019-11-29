@@ -43,7 +43,8 @@ namespace ais_base {
         base::Angle course_over_ground;
         base::Angle latitude;
         base::Angle longitude;
-        NavigationalStatus status;
+
+        NavigationalStatus status = STATUS_NOT_DEFINED;
 
         /** Whether the GPS position is using differential (< 10m resolution) or
          * not
