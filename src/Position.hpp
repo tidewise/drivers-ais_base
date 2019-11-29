@@ -32,6 +32,13 @@ namespace ais_base {
         /** The vessel MMSI number */
         int mmsi = 0;
 
+        /** The vessel IMO number if available
+         *
+         * This should be filled by the software if the vessel information has
+         * been received already
+         */
+        int imo = 0;
+
         /** Vessel course over ground */
         base::Angle course_over_ground;
         base::Angle latitude;
