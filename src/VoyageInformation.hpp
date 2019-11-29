@@ -10,6 +10,7 @@ namespace ais_base {
     struct VoyageInformation {
         base::Time time;
 
+        int mmsi = 0;
         int imo = 0;
         base::Time eta;
         std::string destination;
