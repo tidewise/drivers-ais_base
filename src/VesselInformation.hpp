@@ -3,6 +3,7 @@
 
 #include <string>
 
+#include <base/Eigen.hpp>
 #include <base/Float.hpp>
 #include <base/Time.hpp>
 
