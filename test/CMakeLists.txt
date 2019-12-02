@@ -1,3 +1,2 @@
-rock_testsuite(test_suite suite.cpp
-   test_Dummy.cpp
-   DEPS ais_base)
+rock_gtest(test_suite suite.cpp)
+   #DEPS ais_base)
