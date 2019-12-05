@@ -73,6 +73,14 @@ namespace ais_base {
 
         bool raim = false;
         uint32_t radio_status = 0;
+
+        /** Convert invalid enum values to the corresponding 'unknown' enum
+         * entry
+         *
+         * This is to be used as input validation for packages that do
+         * conversion from e.g. NMEA
+         */
+        void ensureEnumsValid();
     };
 
 }

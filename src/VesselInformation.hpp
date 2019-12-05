@@ -155,6 +155,14 @@ namespace ais_base {
             base::Vector3d(base::unknown<float>(),
                            base::unknown<float>(),
                            base::unknown<float>());
+
+        /** Convert invalid enum values to the corresponding 'unknown' enum
+         * entry
+         *
+         * This is to be used as input validation for packages that do
+         * conversion from e.g. NMEA
+         */
+        void ensureEnumsValid();
     };
 }
 
