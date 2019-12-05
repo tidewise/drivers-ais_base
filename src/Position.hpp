@@ -22,13 +22,19 @@ namespace ais_base {
         STATUS_RESERVED3 = 12,
         STATUS_RESERVED4 = 13,
         STATUS_AIS_SART_ACTIVE = 14,
-        STATUS_NOT_DEFINED = 15
+        STATUS_NOT_DEFINED = 15,
+
+        STATUS_MIN = 0,
+        STATUS_MAX = 15
     };
 
     enum ManeuverIndicator {
         MANEUVER_NOT_AVAILABLE = 0,
         MANEUVER_NORMAL = 1,
-        MANEUVER_SPECIAL = 2
+        MANEUVER_SPECIAL = 2,
+
+        MANEUVER_MIN = 0,
+        MANEUVER_MAX = 2
     };
 
     /** Representation of the data stored in AIS Message 1 to 3 */
