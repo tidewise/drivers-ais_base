@@ -22,13 +22,19 @@ namespace ais_base {
         STATUS_RESERVED3 = 12,
         STATUS_RESERVED4 = 13,
         STATUS_AIS_SART_ACTIVE = 14,
-        STATUS_NOT_DEFINED = 15
+        STATUS_NOT_DEFINED = 15,
+
+        STATUS_MIN = 0,
+        STATUS_MAX = 15
     };
 
     enum ManeuverIndicator {
         MANEUVER_NOT_AVAILABLE = 0,
         MANEUVER_NORMAL = 1,
-        MANEUVER_SPECIAL = 2
+        MANEUVER_SPECIAL = 2,
+
+        MANEUVER_MIN = 0,
+        MANEUVER_MAX = 2
     };
 
     /** Representation of the data stored in AIS Message 1 to 3 */
@@ -67,6 +73,14 @@ namespace ais_base {
 
         bool raim = false;
         uint32_t radio_status = 0;
+
+        /** Convert invalid enum values to the corresponding 'unknown' enum
+         * entry
+         *
+         * This is to be used as input validation for packages that do
+         * conversion from e.g. NMEA
+         */
+        void ensureEnumsValid();
     };
 
 }
