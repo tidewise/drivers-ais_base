@@ -18,10 +18,10 @@ namespace ais_base {
         EPFD_INTEGRATED_NAVIGATION_SYSTEM = 6,
         EPFD_SURVEYED = 7,
         EPFD_GALILEO = 8,
-
-        EPFD_MIN = 0,
-        EPFD_MAX = 8
     };
+
+    static const int EPFD_MIN = 0;
+    static const int EPFD_MAX = 8;
 
     enum ShipType {
         SHIP_TYPE_NOT_AVAILABLE = 0,
@@ -133,10 +133,10 @@ namespace ais_base {
         SHIP_TYPE_RESERVED97 = 97,
         SHIP_TYPE_RESERVED98 = 98,
         SHIP_TYPE_OTHER_NO_INFO = 99,
-
-        SHIP_TYPE_MIN = 0,
-        SHIP_TYPE_MAX = 99
     };
+
+    static const int SHIP_TYPE_MIN = 0;
+    static const int SHIP_TYPE_MAX = 99;
 
     struct VesselInformation {
         base::Time time;
