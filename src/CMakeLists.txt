@@ -1,5 +1,13 @@
 rock_library(ais_base
-    HEADERS Position.hpp VesselInformation.hpp VoyageInformation.hpp
-    SOURCES Position.cpp VesselInformation.cpp
-    DEPS_PKGCONFIG base-types
+    HEADERS
+        Position.hpp
+        VesselInfoAccumulator.hpp
+        VesselAggregatedInfo.hpp
+        VoyageInformation.hpp
+    SOURCES
+        Position.cpp
+        VesselInfoAccumulator.cpp
+        VesselInformation.cpp
+    DEPS_PKGCONFIG
+        base-types
 )
