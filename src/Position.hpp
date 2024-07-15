@@ -39,25 +39,21 @@ namespace ais_base {
 
     /** Representation of the data stored in AIS Message 1 to 3 */
     struct Position {
+    public:
         base::Time time;
-
         /** The vessel MMSI number */
         int mmsi = 0;
-
         /** The vessel IMO number if available
          *
          * This should be filled by the software if the vessel information has
          * been received already
          */
         int imo = 0;
-
         /** Vessel course over ground */
         base::Angle course_over_ground;
         base::Angle latitude;
         base::Angle longitude;
-
         NavigationalStatus status = STATUS_NOT_DEFINED;
-
         /** Whether the GPS position is using differential (< 10m resolution) or
          * not
          */
@@ -68,11 +64,11 @@ namespace ais_base {
         float yaw_velocity = base::unknown<float>();
         /** Speed over ground, in m/s */
         float speed_over_ground = base::unknown<float>();
-
         ManeuverIndicator maneuver_indicator = MANEUVER_NOT_AVAILABLE;
-
         bool raim = false;
         uint32_t radio_status = 0;
+
+        Position() = default;
 
         /** Convert invalid enum values to the corresponding 'unknown' enum
          * entry

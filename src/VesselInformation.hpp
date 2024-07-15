@@ -139,22 +139,47 @@ namespace ais_base {
     static const int SHIP_TYPE_MAX = 99;
 
     struct VesselInformation {
+    public:
         base::Time time;
-
         int mmsi = 0;
         int imo = 0;
-        std::string call_sign;
         std::string name;
+        std::string call_sign;
+        float length = base::unknown<float>();
+        float width = base::unknown<float>();
         ShipType ship_type = SHIP_TYPE_NOT_AVAILABLE;
         EPFDFixType epfd_fix = EPFD_UNDEFINED;
         float draft = base::unknown<float>();
-        float length = base::unknown<float>();
-        float width = base::unknown<float>();
-
         base::Vector3d reference_position =
             base::Vector3d(base::unknown<float>(),
                            base::unknown<float>(),
                            base::unknown<float>());
+
+        VesselInformation() = default;
+        VesselInformation(base::Time const& time,
+            int mmsi,
+            int imo,
+            std::string name,
+            std::string call_sign,
+            float length = base::unknown<float>(),
+            float width = base::unknown<float>(),
+            ShipType ship_type = SHIP_TYPE_NOT_AVAILABLE,
+            EPFDFixType epfd_fix = EPFD_UNDEFINED,
+            float draft = base::unknown<float>(),
+            base::Vector3d const& reference_position = base::Vector3d(base::unknown<float>(),
+                base::unknown<float>(),
+                base::unknown<float>()))
+            : time(time)
+            , mmsi(mmsi)
+            , imo(imo)
+            , name(name)
+            , call_sign(call_sign)
+            , length(length)
+            , width(width)
+            , ship_type(ship_type)
+            , epfd_fix(epfd_fix)
+            , draft(draft)
+            , reference_position(reference_position){};
 
         /** Convert invalid enum values to the corresponding 'unknown' enum
          * entry
@@ -167,4 +192,3 @@ namespace ais_base {
 }
 
 #endif
-
