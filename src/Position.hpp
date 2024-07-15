@@ -69,34 +69,6 @@ namespace ais_base {
         uint32_t radio_status = 0;
 
         Position() = default;
-        Position(base::Time const& time,
-            int mmsi,
-            int imo,
-            base::Angle const& course_over_ground,
-            base::Angle const& latitude,
-            base::Angle const& longitude,
-            NavigationalStatus status,
-            bool high_accuracy_position,
-            base::Angle const& yaw,
-            float yaw_velocity,
-            float speed_over_ground,
-            ManeuverIndicator maneuver_indicator,
-            bool raim,
-            uint32_t radio_status)
-            : time(time)
-            , mmsi(mmsi)
-            , imo(imo)
-            , course_over_ground(course_over_ground)
-            , latitude(latitude)
-            , longitude(longitude)
-            , status(status)
-            , high_accuracy_position(high_accuracy_position)
-            , yaw(yaw)
-            , yaw_velocity(yaw_velocity)
-            , speed_over_ground(speed_over_ground)
-            , maneuver_indicator(maneuver_indicator)
-            , raim(raim)
-            , radio_status(radio_status){};
 
         /** Convert invalid enum values to the corresponding 'unknown' enum
          * entry
