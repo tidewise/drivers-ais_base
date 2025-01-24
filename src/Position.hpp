@@ -37,6 +37,12 @@ namespace ais_base {
     static const int MANEUVER_MIN = 0;
     static const int MANEUVER_MAX = 2;
 
+    enum PositionCorrectionStatus {
+        POSITION_RAW = 0,
+        POSITION_CENTERED_USING_HEADING = 1,
+        POSITION_CENTERED_USING_COURSE = 2
+    };
+
     /** Representation of the data stored in AIS Message 1 to 3 */
     struct Position {
     public:
@@ -67,6 +73,7 @@ namespace ais_base {
         ManeuverIndicator maneuver_indicator = MANEUVER_NOT_AVAILABLE;
         bool raim = false;
         uint32_t radio_status = 0;
+        PositionCorrectionStatus correction_status = POSITION_RAW;
 
         Position() = default;
 
